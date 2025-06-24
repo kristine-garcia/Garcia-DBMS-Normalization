@@ -1,0 +1,33 @@
+// Scenario 4:  Movie Theater Ticketing System
+
+Table Customer {
+  Customer_id int [primary key, increment]
+  Customer_name varchar(100)
+  Email varchar(100)
+}
+
+Table Movie {
+  Movie_id int [primary key, increment]
+  Movie_title varchar(100)
+  Genre varchar(100)
+}
+
+Table Screening {
+  Screening_id int [primary key, increment]
+  Movie_id int [ref: > Movie.Movie_id]
+  Screening_time datetime
+  Room_number varchar(100)
+}
+
+Table Ticket {
+  Ticket_id int [primary key, increment]
+  Customer_id int [ref: > Customer.Customer_id]
+  Screening_id int [ref: > Screening.Screening_id]
+}
+
+Table Ticket_Seat{
+Ticket_id int [primary key, ref: > Ticket.Ticket_id]
+Seat_number varchar [primary key]
+}
+
+https://dbdiagram.io/d/Movie-Theater-Ticketing-System-685a7122f039ec6d36a11bd4
