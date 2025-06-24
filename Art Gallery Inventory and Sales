@@ -1,0 +1,39 @@
+// Scenario 5:  Art Gallery Inventory and Sales
+Table Artist {
+  Artist_id int [primary key, increment]
+  Artist_name varchar(100)
+  Nationality varchar(100)
+}
+
+Table Artwork {
+  Artwork_id int [primary key, increment]
+  Artwork_title varchar(100)
+  Medium varchar(100)
+  ArtistID int [ref: > Artist.Artist_id]
+}
+
+Table Buyer {
+  Buyer_id int [primary key, increment]
+  Buyer_name varchar(100)
+  Contact_number varchar(100)
+}
+
+Table Sale {
+  Sale_id int [primary key, increment]
+  Artwork_id int [ref: > Artwork.Artwork_id]
+  Buyer_id int [ref: > Buyer.Buyer_id]
+}
+
+Table Exhibition {
+  Exhibition_id int [primary key, increment]
+  Exhibition_name varchar(100)
+  Exhibit_date datetime
+}
+
+Table Artwork_Exhibition {
+  Artwork_id int [primary key, ref: > Artwork.Artwork_id]
+  Exhibition_id int [primary key, ref: > Exhibition.Exhibition_id]
+}
+
+
+https://dbdiagram.io/d/Art-Gallery-Inventory-and-Sales-6850d6343cc77757c820f02c
