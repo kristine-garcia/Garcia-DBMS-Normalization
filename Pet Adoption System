@@ -1,0 +1,33 @@
+// Scenario 3:  Pet Adoption System
+Table Pet {
+  Pet_id int [primary key, increment]
+  Pet_name varchar(100)
+  Species varchar(100)
+  Birth_year int
+}
+
+Table Adopter {
+  Adopter_id int [primary key, increment]
+  Adopter_name varchar(100)
+  Contact_number varchar(100)
+}
+
+Table Vet {
+  Vet_ID int [primary key, increment]
+  Vet_name varchar(100)
+}
+
+Table Adoption {
+  Adoption_id int [primary key, increment]
+  Pet_id int [ref: > Pet.Pet_id]
+  Adopter_id int [ref: > Adopter.Adopter_id]
+}
+
+Table VetVisit {
+  Adoption_id int [primary key, ref: > Adoption.Adoption_id]
+  Visit_id int [primary key]
+  Vet_id int [ref: > Vet.Vet_ID]
+  Visit_type varchar
+  Visit_date datetime
+}
+
