@@ -1,0 +1,27 @@
+// Scenario 1: Fitness Center Management System
+Table Members{
+id int [primary key, increment]
+name varchar(100)
+contact_number varchar(100)
+}
+
+Table Trainers{
+id int [primary key, increment]
+name varchar(100)
+specialty varchar(100)
+}
+
+Table Classes{
+id int [primary key, increment]
+name varchar(100)
+trainer_id int [ref: > Trainers.id]
+}
+
+Table Attendance {
+id int [primary key, increment]
+member_id int [ref: > Members.id]
+class_id int [ref: > Classes.id]
+checkin_time datetime
+}
+
+https://dbdiagram.io/d/Fitness-Center-Management-System-685a6951f039ec6d369f6ae5
