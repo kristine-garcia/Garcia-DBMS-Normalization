@@ -31,3 +31,4 @@ Table VetVisit {
   Visit_date datetime
 }
 
+https://dbdiagram.io/d/Pet-Adoption-System-6850d3cc3cc77757c820ae5c
