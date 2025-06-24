@@ -1,0 +1,28 @@
+// Scenarion 2: Car Rental Service
+Table Customers{
+id int [primary key, increment]
+email varchar(100)
+}
+
+Table Vehicles{
+id int [primary key, increment]
+plate varchar(7)
+model varchar(100)
+}
+
+Table Maintenance{
+id int [primary key, increment]
+vehicle_id int [ref: > Vehicles.id]
+mechanic_name varchar(100)
+maintenance_date date
+}
+
+Table Rentals{
+id int [primary key, increment] 
+customer_id int [ref: > Customers.id]
+vehicle_id int [ref: > Vehicles.id]
+rental_start datetime
+rental_end datetime
+}
+
+https://dbdiagram.io/d/Car-Rental-Service-685a6e62f039ec6d36a08105
